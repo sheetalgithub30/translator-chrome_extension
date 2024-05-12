@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Translator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="output.css"/>
 </head>
 <body>
-    <div id="container">
+    <div id="container" class= " w-64 h-64 p-5 bg-gray-300">
      <select name="language">
         <option value = "">Select Language</option>
     </select>
-    <input type="text" id="from" value="hello world">
-    <input type="text" id="to">
+    <div class="m-3">
+        <input type="text" id="from" value="" placeholder="Text to be translated" class="">
+
+    </div>
+    <div class="m-3">
+        <input type="text" id="to" value="" placeholder="Translated text" class="">
+
+    </div>
     </div>
     <script src="popup.js"></script>
 </body>
