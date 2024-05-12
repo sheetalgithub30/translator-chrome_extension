@@ -2,6 +2,15 @@ let select = document.querySelector("select");
 let from = document.querySelector("#from");
 let to = document.querySelector("#to");
 
+let close = document.querySelector("#close");
+
+let from_sound = document.querySelector("#from_sound");
+let to_sound = document.querySelector("#to_sound");
+
+from.addEventListener("input",()=>{
+    select.removeAttribute("disabled");
+})
+
 select.addEventListener("change",async()=>{
     let language = select.value;
     console.log(language);
@@ -89,3 +98,26 @@ const getTranslate = async(target)=>{
         console.error(error);
     }
 }
+
+//close button
+close.addEventListener("click",()=>{
+    select.value = "Select Language";
+    select.setAttribute("disabled","true");
+    from.value="";
+    to.value="";
+})
+
+//from_text sound
+from_sound.addEventListener("click",()=>{
+    let utterance = new SpeechSynthesisUtterance(from.value);
+    // utterance.lang = "en" ;
+    speechSynthesis.speak(utterance);
+})
+
+//to_text sound
+to_sound.addEventListener("click",()=>{
+    let utterance = new SpeechSynthesisUtterance(to.value);
+    utterance.lang = select.value;
+    speechSynthesis.speak(utterance);
+    // console.log(to.value);
+})

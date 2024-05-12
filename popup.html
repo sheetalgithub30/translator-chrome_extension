@@ -4,21 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Translator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="output.css"/>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Poppins,sans-serif;
+        }
+    </style>
 </head>
 <body>
-    <div id="container" class= " w-64 h-64 p-5 bg-gray-300">
-     <select name="language">
-        <option value = "">Select Language</option>
+    <div id="container" class= "h-full bg-cyan-100 p-7">
+    <div class="flex justify-center">
+        <img src="images.png" class="w-8 h-8 m-2">
+        <h1 class="text-3xl font-bold text-center m-2">Translator</h1>
+        <p class="absolute top-6 right-10 cursor-default" id="close">❌</p>
+    </div>
+     <select name="language" class="ml-12 text-lg w-56" disabled>
+        <option>Select Language</option>
     </select>
     <div class="m-3">
-        <input type="text" id="from" value="" placeholder="Text to be translated" class="">
-
+        <textarea placeholder="Text to be translated...." id="from" rows="7" cols="30" class="text-base p-4 border-2 border-gray-950"></textarea>
+        <p id="from_sound">🔊</p>
     </div>
     <div class="m-3">
-        <input type="text" id="to" value="" placeholder="Translated text" class="">
-
+        <textarea placeholder="Translated text..." id="to"  rows="7" cols="30" class="text-base p-4 border-2 border-gray-950" disabled></textarea>
+        <p id="to_sound">🔊</p>
     </div>
     </div>
     <script src="popup.js"></script>
