@@ -6,9 +6,8 @@
         "128" : "images.png"
     },
     "description": "Translator the text into your language",
-    "permission":"activeTab",
+    "permissions":"activeTab",
     "action":{
         "default_popup":"popup.html"
 }
-
 }
