@@ -127,8 +127,8 @@ document.addEventListener('DOMContentLoaded', () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         chrome.tabs.sendMessage(tabs[0].id, { action: 'getSelectedText' }, (response) => {
             if (response && response.selectedText) {
-                document.getElementById('from').value = response.selectedText;
-                console.log(response.selectedText);
+             from.value = response.selectedText;
+             select.removeAttribute("disabled");   
             }
         });
     });
