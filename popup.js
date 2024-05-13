@@ -26,22 +26,22 @@ select.addEventListener("change",async()=>{
 //Get Languages from the api
 const getList = async()=>{
     const url = 'https://text-translator2.p.rapidapi.com/getLanguages';
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': 'e334eb9947mshbf3f37c572d7872p1d7f6fjsn95cdf7028778',
-            'X-RapidAPI-Host': 'text-translator2.p.rapidapi.com'
-        }
-    };
-    
-    try {
-        const response = await fetch(url, options);
-        const result = await response.json();
-        return result;
-        // console.log(result);
-    } catch (error) {
-        console.error(error);
-    }
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '75a5a70114mshd579c697a03cc19p1fa835jsn133f11245987',
+		'X-RapidAPI-Host': 'text-translator2.p.rapidapi.com'
+	}
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.json();
+    return result;
+	// console.log(result);
+} catch (error) {
+	console.error(error);
+}
 };
 
 // getList();
@@ -75,28 +75,28 @@ const list = document.createElement("option");
 const getTranslate = async(target)=>{
     console.log(from.value);
     const url = 'https://text-translator2.p.rapidapi.com/translate';
-    const options = {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/x-www-form-urlencoded',
-            'X-RapidAPI-Key': 'e334eb9947mshbf3f37c572d7872p1d7f6fjsn95cdf7028778',
-            'X-RapidAPI-Host': 'text-translator2.p.rapidapi.com'
-        },
-        body: new URLSearchParams({
-            source_language: 'en',
-            target_language: target,
-            text: from.value
-        })
-    };
-    
-    try {
-        const response = await fetch(url, options);
-        const result = await response.json();
-        return result;
-        // console.log(result);
-    } catch (error) {
-        console.error(error);
-    }
+const options = {
+	method: 'POST',
+	headers: {
+		'content-type': 'application/x-www-form-urlencoded',
+		'X-RapidAPI-Key': '75a5a70114mshd579c697a03cc19p1fa835jsn133f11245987',
+		'X-RapidAPI-Host': 'text-translator2.p.rapidapi.com'
+	},
+	body: new URLSearchParams({
+		source_language: 'en',
+		target_language: target,
+        text: from.value
+	})
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.json();
+    return result;
+	// console.log(result);
+} catch (error) {
+	console.error(error);
+}
 }
 
 //close button
