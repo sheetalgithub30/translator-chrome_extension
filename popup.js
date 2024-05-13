@@ -121,3 +121,15 @@ to_sound.addEventListener("click",()=>{
     speechSynthesis.speak(utterance);
     // console.log(to.value);
 })
+
+// popup.js
+document.addEventListener('DOMContentLoaded', () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.sendMessage(tabs[0].id, { action: 'getSelectedText' }, (response) => {
+            if (response && response.selectedText) {
+                document.getElementById('from').value = response.selectedText;
+                console.log(response.selectedText);
+            }
+        });
+    });
+});

@@ -6,8 +6,14 @@
         "128" : "images.png"
     },
     "description": "Translator the text into your language",
-    "permissions":"activeTab",
+    "permissions": ["activeTab"],
     "action":{
         "default_popup":"popup.html"
-}
+     },
+
+"content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"],
+    "run_at": "document_end"
+}]
 }
