@@ -122,7 +122,7 @@ to_sound.addEventListener("click",()=>{
     // console.log(to.value);
 })
 
-// popup.js
+//getting respone from window.select
 document.addEventListener('DOMContentLoaded', () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         chrome.tabs.sendMessage(tabs[0].id, { action: 'getSelectedText' }, (response) => {
